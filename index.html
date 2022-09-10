@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Shafeek JK</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!--
     - favicon
@@ -646,7 +647,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://mhdshafu12.github.io/Redstore-commercial/redstore.html">
+              <a href="https://mhdshafu12.github.io/Redstore-commercial/redstore.html" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -664,7 +665,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://mhdshafu12.github.io/Milk.co/Milk.html">
+              <a href="https://mhdshafu12.github.io/Milk.co/Milk.html" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -682,7 +683,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="https://mhdshafu12.github.io/Clone-Youtube/youtube.html">
+              <a href="https://mhdshafu12.github.io/Clone-Youtube/youtube.html" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -700,7 +701,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="https://mhdshafu12.github.io/clone-star-bucks/">
+              <a href="https://mhdshafu12.github.io/clone-star-bucks/" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -797,7 +798,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" onsubmit="sendEmail(); reset(); return false" data-form>
+          <form id="gform" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" id="name" placeholder="Full name" required data-form-input>
@@ -824,6 +825,26 @@
   </main>
 
 
+  <script>
+    $("#gform").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbwrmk3OZYzONlT8SrC7GS-vIAA1bfRabMFynOF2D82m_loPUTQ0/exec",
+            data:$("#gform").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
+
 
 
 
@@ -832,11 +853,11 @@
     - custom js link
   -->
   <script src="assets/js/script.js"></script>
-
+  <script src="assets/js/smtp.js"></script>
   <!--
     - ionicon link
-  -->
-  <script src=" https://smtpjs.com/v3/smtp.js"></script>
+  --> 
+  
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   
